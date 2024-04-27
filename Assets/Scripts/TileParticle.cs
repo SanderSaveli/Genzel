@@ -1,0 +1,124 @@
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+
+public class TileParticle : MonoBehaviour
+{
+    Camera _camera;
+    public Transform center;
+    public TileFigure figure;
+    public Vector2Int coordinate => _coordinate;
+    [SerializeField] private Vector2Int _coordinate;
+    private Vector3 prevPos;
+
+    public CellView lastCellView;
+    private IDropHandler lastSelectedView;
+    bool isMovable;
+
+    private void Awake()
+    {
+        figure = GetComponentInParent<TileFigure>();
+        center = GetComponent<Transform>();
+    }
+    private void Start()
+    {
+        _camera = Camera.main;
+    }
+
+    public virtual void StartDrag()
+    {
+        isMovable = true;
+        figure.SelectFigure();
+        if (lastCellView != null)
+        {
+            lastCellView.figureLeave(this);
+        }
+    }
+
+    public virtual void UpdateDrag()
+    {
+        Vector3 pos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        if (isMovable)
+        {
+            figure.moveFigure(pos - prevPos);
+            if (TryCatchDropHandler(out IDropHandler handler))
+            {
+                if (lastSelectedView != null)
+                {
+                    if (handler != lastSelectedView)
+                    {
+                        lastSelectedView.ExitHover(this);
+                        lastSelectedView = handler;
+                    }
+                    handler.EnterHover(this);
+                }
+                else
+                {
+                    lastSelectedView = handler;
+                }
+            }
+            else
+            {
+                lastSelectedView.ExitHover(this);
+            }
+        }
+        prevPos = pos;
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
+    }
+
+    public virtual void EndDrag()
+    {
+        isMovable = false;
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray.origin, ray.direction);
+        bool flag = false;
+        figure.DeSelectFigure();
+        if (TryCatchDropHandler(out IDropHandler handler))
+        {
+
+            flag = handler.DropFigure(this);
+        }
+        if (!flag)
+        {
+            if (lastCellView != null)
+            {
+                lastCellView.DropFigure(this);
+            }
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        StartDrag();
+    }
+
+    private void OnMouseUp()
+    {
+        EndDrag();
+    }
+
+    private void Update()
+    {
+        UpdateDrag();
+    }
+
+    private bool TryCatchDropHandler(out IDropHandler handler)
+    {
+        handler = null;
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray.origin, ray.direction);
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.transform.gameObject.TryGetComponent<IDropHandler>(out IDropHandler h))
+            {
+                handler = h;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void PlaceOnCell(CellView view)
+    {
+    }
+}
