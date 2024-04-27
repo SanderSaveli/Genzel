@@ -11,17 +11,13 @@ public class MainMenu : MonoBehaviour
     public int score;
     private void OnEnable()
     {
+        PlayerPrefs.DeleteKey(levelKey);
         if (PlayerPrefs.HasKey(levelKey) == false || PlayerPrefs.GetInt(levelKey) == 0)
         {
             PlayerPrefs.SetInt(levelKey, 0);
             continueButton.onClick.RemoveAllListeners();
             continueButton.image.color = Color.gray;
         }
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void NewGame()
