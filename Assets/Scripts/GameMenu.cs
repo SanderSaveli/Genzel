@@ -7,7 +7,11 @@ public class GameMenu : MonoBehaviour
     public GameObject restartButton;
     public GameObject nextLevelButton;
     public Button MoveButton;
-
+    private LevelChanger levelChanger;
+    private void Start()
+    {
+        levelChanger = FindObjectOfType<LevelChanger>();
+    }
 
     public void ShowWin()
     {
@@ -22,7 +26,8 @@ public class GameMenu : MonoBehaviour
 
     public void NextLevel()
     {
-        
+        PlayerPrefs.SetInt(levelChanger.levelKey, PlayerPrefs.GetInt(levelChanger.levelKey) + 1);
+        levelChanger.FadeToLevel(PlayerPrefs.GetInt(levelChanger.levelKey));
     }
 
     public void ReloadLevel()

@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    private readonly string levelKey = "lastCompleted";
     [SerializeField] private Button continueButton;
+    [SerializeField] private LevelChanger changer;
     public int score;
     private void OnEnable()
     {
-        PlayerPrefs.DeleteKey(levelKey);
-        if (PlayerPrefs.HasKey(levelKey) == false || PlayerPrefs.GetInt(levelKey) == 0)
+        PlayerPrefs.DeleteKey(changer.levelKey);
+        if (PlayerPrefs.HasKey(changer.levelKey) == false || PlayerPrefs.GetInt(changer.levelKey) == 0)
         {
-            PlayerPrefs.SetInt(levelKey, 0);
+            PlayerPrefs.SetInt(changer.levelKey, 1);
             continueButton.onClick.RemoveAllListeners();
             continueButton.image.color = Color.gray;
         }
@@ -22,12 +20,13 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(1);
+        PlayerPrefs.SetInt(changer.levelKey, 1);
+        changer.FadeToLevel(1);
     }
-    
+
     public void ContinueGame()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt(levelKey));
+        changer.FadeToLevel(PlayerPrefs.GetInt(changer.levelKey));
     }
 
     public void QuitGame()
