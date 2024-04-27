@@ -8,11 +8,9 @@ public class MainMenu : MonoBehaviour
 {
     private readonly string levelKey = "lastCompleted";
     [SerializeField] private Button continueButton;
-    public Text counter;
     public int score;
     private void OnEnable()
     {
-        PlayerPrefs.DeleteKey(levelKey);
         if (PlayerPrefs.HasKey(levelKey) == false || PlayerPrefs.GetInt(levelKey) == 0)
         {
             PlayerPrefs.SetInt(levelKey, 0);
@@ -41,16 +39,8 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void ChangeSound()
+    public void GoToMainMenu()
     {
-
-    }
-
-    public void ChangeMusic() 
-    {
-        int increment = 1;
-        int totalCompleted = PlayerPrefs.GetInt(levelKey);
-        PlayerPrefs.SetInt(levelKey, increment + totalCompleted);
-        score++;
+        SceneManager.LoadScene(0);
     }
 }
