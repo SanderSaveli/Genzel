@@ -853,6 +853,7 @@ GameObject:
   - component: {fileID: 787012721}
   - component: {fileID: 787012720}
   - component: {fileID: 787012719}
+  - component: {fileID: 787012722}
   m_Layer: 5
   m_Name: musicToggle
   m_TagString: Untagged
@@ -898,7 +899,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -926,6 +927,18 @@ MonoBehaviour:
       - m_Target: {fileID: 383986623}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ToggleMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 787012722}
+        m_TargetAssemblyTypeName: SpriteState, Assembly-CSharp
+        m_MethodName: SpriteChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -973,6 +986,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787012717}
   m_CullTransparentMesh: 1
+--- !u!114 &787012722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787012717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54efeadad2b602c409a2ffbf69a8c8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteState1: {fileID: 21300000, guid: 6c5ebbd7c0fb90a419e4ef787e4ce62b, type: 3}
+  spriteState2: {fileID: 21300000, guid: 5bf3f35f26afd1745a4011797925edd0, type: 3}
 --- !u!1 &867676416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1427,7 @@ GameObject:
   - component: {fileID: 1931234227}
   - component: {fileID: 1931234226}
   - component: {fileID: 1931234225}
+  - component: {fileID: 1931234228}
   m_Layer: 5
   m_Name: sfxToggle
   m_TagString: Untagged
@@ -1520,6 +1548,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931234223}
   m_CullTransparentMesh: 1
+--- !u!114 &1931234228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931234223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54efeadad2b602c409a2ffbf69a8c8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteState1: {fileID: 21300000, guid: ac20772f427c6cb4987a2c1a7f7b575a, type: 3}
+  spriteState2: {fileID: 21300000, guid: f2d9d0e630e06b34c80d76822809e774, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
