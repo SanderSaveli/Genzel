@@ -5,7 +5,6 @@ using System;
 
 public class GameField : MonoBehaviour
 {
-    [SerializeField] private GameObject fieldView;
     [SerializeField] private Tilemap fieldLayer;
     [SerializeField] public Tilemap roadLayer;
 

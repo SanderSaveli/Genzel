@@ -3,14 +3,27 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GameField), typeof(RoadMover), typeof(PathFinder))]
 public class GameManager : MonoBehaviour
 {
-    public GameField gameField;
-    public RoadMover roadMover;
-    public PathFinder pathFinder;
+    public static bool canMoveTiles = true;
+    private GameMenu menu;
+    private GameField gameField;
+    private RoadMover roadMover;
+    private PathFinder pathFinder;
     public Road StartCell;
     private Action<bool> roadEnd;
     private bool lastResult = false;
+
+    private void Start()
+    {
+        gameField = GetComponent<GameField>();
+        roadMover = GetComponent<RoadMover>();
+        pathFinder = GetComponent<PathFinder>();
+        menu = FindObjectOfType<GameMenu>();
+        roadMover.SetObjectPosition(StartCell.transform.position);
+        canMoveTiles = true;
+    }
 
     private void OnEnable()
     {
@@ -18,6 +31,7 @@ public class GameManager : MonoBehaviour
     }
     public void StratMove()
     {
+        canMoveTiles = false;
         lastResult = pathFinder.TryCreatePath(gameField.cellField, StartCell, out List<IReferedCell> cells);
 
         roadMover.MoveToRoad(gameField.roadLayer, cells, roadEnd);
@@ -27,11 +41,11 @@ public class GameManager : MonoBehaviour
     {
         if (lastResult)
         {
-            Debug.Log("Win");
+            menu.ShowWin();
         }
         else
         {
-            Debug.Log("Lose");
+            menu.ShowLose();
         }
     }
 }

@@ -16,11 +16,8 @@ public class PathFinder : MonoBehaviour
         {
             if (field.TryGetCell(curCoor + GetVectorByDir(curentDir), out IReferedCell cell))
             {
-                Debug.Log(path.Count);
-                Debug.Log("t" + cell.coordinates + " " + (curCoor + GetVectorByDir(curentDir)));
                 if (cell.tile == null)
                 {
-                    Debug.Log("j");
                     return false;
                 }
                 if (cell.tile.isRoad)
@@ -42,7 +39,6 @@ public class PathFinder : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("e");
                         return false;
                     }
 
@@ -53,17 +49,14 @@ public class PathFinder : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("w");
                     return false;
                 }
             }
             else
             {
-                Debug.Log("s");
                 return false;
             }
         }
-        Debug.Log("m");
         return false;
     }
 

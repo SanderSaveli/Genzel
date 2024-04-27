@@ -97,17 +97,26 @@ public class TileParticle : MonoBehaviour
 
     private void OnMouseDown()
     {
-        StartDrag();
+        if (GameManager.canMoveTiles)
+        {
+            StartDrag();
+        }
     }
 
     private void OnMouseUp()
     {
-        EndDrag();
+        if (GameManager.canMoveTiles)
+        {
+            EndDrag();
+        }
     }
 
     private void Update()
     {
-        UpdateDrag();
+        if (GameManager.canMoveTiles)
+        {
+            UpdateDrag();
+        }
     }
 
     private bool TryCatchDropHandler(out IDropHandler handler)

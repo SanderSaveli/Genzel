@@ -13,6 +13,12 @@ public class RoadMover : MonoBehaviour
     private List<IReferedCell> CurentPath;
     Tilemap field;
     Action<bool> action;
+
+    public void SetObjectPosition(Vector3 pos)
+    {
+        pos.y = height;
+        movableObject.transform.position = pos;
+    }
     public void MoveToRoad(Tilemap field, List<IReferedCell> path, Action<bool> pathComplete)
     {
         curIndex = 0;
