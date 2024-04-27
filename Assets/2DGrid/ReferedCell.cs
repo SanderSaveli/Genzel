@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CellField2D
@@ -11,11 +12,23 @@ namespace CellField2D
 
         public CellView cellView { get; private set; }
 
+        public TileParticle tile { get; set; }
         public override void changeOwner(int ownerID)
         {
+            if(ownerID == 0)
+            {
+                tile = null;
+            }
             base.changeOwner(ownerID);
             cellView.ChangeOvner(ownerID);
+            Debug.Log(tile + " " + coordinates);
 
+        }
+
+        public void changeOwner(int ownerID, TileParticle tile)
+        {
+            this.tile = tile;
+            changeOwner(ownerID);
         }
     }
 

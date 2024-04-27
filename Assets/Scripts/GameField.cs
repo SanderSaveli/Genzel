@@ -7,9 +7,9 @@ public class GameField : MonoBehaviour
 {
     [SerializeField] private GameObject fieldView;
     [SerializeField] private Tilemap fieldLayer;
-    [SerializeField] private Tilemap roadLayer;
+    [SerializeField] public Tilemap roadLayer;
 
-    private RectangleField<IReferedCell> cellField;
+    public RectangleField<IReferedCell> cellField;
 
     private void Start()
     {
@@ -76,8 +76,9 @@ public class GameField : MonoBehaviour
                 {
                     Vector2Int cellPos = OwnedCell.coordinates;
                     particle.transform.position = roadLayer.CellToWorld(new Vector3Int(cellPos.x, cellPos.y, 0));
-                    OwnedCell.changeOwner(1);
+                    OwnedCell.changeOwner(1, particle);
                     particle.lastCellView = OwnedCell.cellView;
+                    OwnedCell.tile = particle;
                 }
             }
         }

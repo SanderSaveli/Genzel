@@ -6,8 +6,12 @@ public class TileParticle : MonoBehaviour
     Camera _camera;
     public Transform center;
     public TileFigure figure;
+    public Vector2Int fieldCoordinate => lastCellView.coordinates;
     public Vector2Int coordinate => _coordinate;
     [SerializeField] private Vector2Int _coordinate;
+    [SerializeField] private bool _isRoad;
+    public bool isRoad => _isRoad;
+    public Road road { get; private set; }
     private Vector3 prevPos;
 
     public CellView lastCellView;
@@ -18,6 +22,10 @@ public class TileParticle : MonoBehaviour
     {
         figure = GetComponentInParent<TileFigure>();
         center = GetComponent<Transform>();
+        if (isRoad)
+        {
+            road = GetComponent<Road>();
+        }
     }
     private void Start()
     {
@@ -120,5 +128,6 @@ public class TileParticle : MonoBehaviour
 
     public void PlaceOnCell(CellView view)
     {
+        //_coordinate = view.coordinates;
     }
 }
