@@ -12,4 +12,13 @@ public class StaticTileParticle : TileParticle
     public override void EndDrag()
     {
     }
+
+    public override void ExitHover()
+    {
+
+    }
+
+    public override void EnterHover()
+    {
+    }
 }
