@@ -5,11 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class SlideManager : MonoBehaviour
 {
     public List<Sprite> sprites = new List<Sprite>();
     public List<GameObject> texts = new List<GameObject>();
+    public List<Sound> voices = new List<Sound>();
     public Image image;
     private int curentSlide = 0;
     private LevelChanger levelChanger;
@@ -17,6 +19,7 @@ public class SlideManager : MonoBehaviour
     {
         levelChanger = FindObjectOfType<LevelChanger>();
         ShowNextSlide();
+        
     }
     private void Update()
     {
