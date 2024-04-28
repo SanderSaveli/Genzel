@@ -54,5 +54,6 @@ public class SlideManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(levelChanger.levelKey, PlayerPrefs.GetInt(levelChanger.levelKey) + 1);
         levelChanger.FadeToLevel(PlayerPrefs.GetInt(levelChanger.levelKey));
+        source.Stop();
     }
 }
