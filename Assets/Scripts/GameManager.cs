@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Road StartCell;
     private Action<bool> roadEnd;
     private bool lastResult = false;
+    private bool isSets;
 
     private void Start()
     {
@@ -21,8 +22,17 @@ public class GameManager : MonoBehaviour
         roadMover = GetComponent<RoadMover>();
         pathFinder = GetComponent<PathFinder>();
         menu = FindObjectOfType<GameMenu>();
-        roadMover.SetObjectPosition(StartCell.transform.position);
+        isSets = false;
         canMoveTiles = true;
+    }
+
+    private void Update()
+    {
+        if (!isSets)
+        {
+            roadMover.SetObjectPosition(StartCell.transform.position);
+            isSets = true;
+        }
     }
 
     private void OnEnable()

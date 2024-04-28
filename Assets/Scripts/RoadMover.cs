@@ -35,6 +35,7 @@ public class RoadMover : MonoBehaviour
             Vector3 targetPos = field.CellToWorld(coor);
             targetPos.y = height;
             MoveObject(targetPos);
+            movableObject.LookAt(targetPos);
             if (Vector3.Distance(movableObject.position, targetPos) <= 0.01f)
             {
                 curIndex++;
