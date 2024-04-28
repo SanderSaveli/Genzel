@@ -39,4 +39,9 @@ public class GameMenu : MonoBehaviour
     {
         MoveButton.onClick.RemoveAllListeners();
     }
+
+    public void ExitToMenu()
+    {
+        levelChanger.FadeToLevel(0);
+    }
 }

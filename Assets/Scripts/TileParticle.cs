@@ -1,6 +1,4 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TileParticle : MonoBehaviour
 {
@@ -107,22 +105,6 @@ public class TileParticle : MonoBehaviour
     public virtual void ExitHover()
     {
         figure.DeSelectFigure();
-    }
-
-
-    private void OnMouseEnter()
-    {
-        if(!Input.GetMouseButtonDown(0))
-        {
-            //EnterHover();
-        }
-    }
-    private void OnMouseExit()
-    {
-        if (!Input.GetMouseButtonDown(0))
-        {
-            //ExitHover();
-        }
     }
 
     private void OnMouseDown()

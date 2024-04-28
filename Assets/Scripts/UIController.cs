@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour
     public int score;
     private void OnEnable()
     {
-        PlayerPrefs.DeleteKey(changer.levelKey);
         if (PlayerPrefs.HasKey(changer.levelKey) == false || PlayerPrefs.GetInt(changer.levelKey) == 0)
         {
             PlayerPrefs.SetInt(changer.levelKey, 1);

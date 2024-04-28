@@ -1,17 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using TMPro;
-using System;
 
 public class SlideManager : MonoBehaviour
 {
     public List<Sprite> sprites = new List<Sprite>();
     public List<GameObject> texts = new List<GameObject>();
-    public List<Sound> voices = new List<Sound>();
+
+    public AudioClip slide1, slide2;
+    public AudioSource source;
     public Image image;
     private int curentSlide = 0;
     private LevelChanger levelChanger;
@@ -19,25 +16,30 @@ public class SlideManager : MonoBehaviour
     {
         levelChanger = FindObjectOfType<LevelChanger>();
         ShowNextSlide();
-        
+        source.clip = slide1;
+        source.Play();
     }
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
             ShowNextSlide();
+            source.Stop();
+            source.clip = slide2;
+            source.Play();
         }
     }
 
     private void ShowNextSlide()
     {
-        if(curentSlide >= sprites.Count ) {
+        if (curentSlide >= sprites.Count)
+        {
             NextLevel();
             return;
         }
-        if(curentSlide != 0)
+        if (curentSlide != 0)
         {
-            texts[curentSlide -1].SetActive(false);
+            texts[curentSlide - 1].SetActive(false);
         }
         image.sprite = sprites[curentSlide];
         texts[curentSlide].SetActive(true);
@@ -48,5 +50,6 @@ public class SlideManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(levelChanger.levelKey, PlayerPrefs.GetInt(levelChanger.levelKey) + 1);
         levelChanger.FadeToLevel(PlayerPrefs.GetInt(levelChanger.levelKey));
+        source.Stop();
     }
 }
