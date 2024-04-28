@@ -20,6 +20,8 @@ public class TileParticle : MonoBehaviour
 
     private void Awake()
     {
+        _coordinate.x = (int)transform.localPosition.x;
+        _coordinate.y = (int)transform.localPosition.z;
         figure = GetComponentInParent<TileFigure>();
         center = GetComponent<Transform>();
         if (isRoad)
@@ -56,6 +58,7 @@ public class TileParticle : MonoBehaviour
                     {
                         lastSelectedView.ExitHover(this);
                         lastSelectedView = handler;
+                        AudioManager.Instance.PlaySFX("TileMove");
                     }
                     handler.EnterHover(this);
                 }
@@ -100,6 +103,7 @@ public class TileParticle : MonoBehaviour
         if (GameManager.canMoveTiles)
         {
             StartDrag();
+            AudioManager.Instance.PlaySFX("TileUp");
         }
     }
 
@@ -108,6 +112,7 @@ public class TileParticle : MonoBehaviour
         if (GameManager.canMoveTiles)
         {
             EndDrag();
+            AudioManager.Instance.PlaySFX("TileDown");
         }
     }
 

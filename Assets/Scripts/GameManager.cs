@@ -41,10 +41,12 @@ public class GameManager : MonoBehaviour
     {
         if (lastResult)
         {
+            AudioManager.Instance.PlaySFX("Win");
             menu.ShowWin();
         }
         else
         {
+            AudioManager.Instance.PlaySFX("Lose");
             menu.ShowLose();
         }
     }

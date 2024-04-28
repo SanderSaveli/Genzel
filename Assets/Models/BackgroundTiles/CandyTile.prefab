@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7916833619725015579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6091385557207330307}
+  m_Layer: 0
+  m_Name: CandyTile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6091385557207330307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916833619725015579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 18191420091861859}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &561288030627064968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6091385557207330307}
+    m_Modifications:
+    - target: {fileID: -8689414268699431911, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 862319fb6e37f7c4589f623eeba84067, type: 2}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.155
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7079456256038007896, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -5740916537890490995, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -5678002325317353205, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -5519637369732452039, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -4632131066094539603, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -4149725018146647438, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -3968904697893677678, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -3001461952279480396, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -2901372064417684961, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -1783234814622320644, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: -1112154715655001036, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: 823210890737636866, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: 919132149155446097, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Name
+      value: CandyTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043747427185984012, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    - target: {fileID: 4583537956242396501, guid: b406f604d8819244dbc34563b3897766, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359fc9fbd35c9e841914626005b6b7b7, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b406f604d8819244dbc34563b3897766, type: 3}
+--- !u!4 &18191420091861859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b406f604d8819244dbc34563b3897766, type: 3}
+  m_PrefabInstance: {fileID: 561288030627064968}
+  m_PrefabAsset: {fileID: 0}
