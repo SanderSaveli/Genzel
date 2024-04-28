@@ -98,6 +98,15 @@ public class TileParticle : MonoBehaviour
         }
     }
 
+    private void OnMouseEnter()
+    {
+        figure.HowerOnFigure();
+    }
+    private void OnMouseExit()
+    {
+        figure.DeSelectFigure();
+    }
+
     private void OnMouseDown()
     {
         if (GameManager.canMoveTiles)
