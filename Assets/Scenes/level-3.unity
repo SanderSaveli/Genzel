@@ -608,6 +608,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 580399719520901156, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 602500769651739915, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
@@ -616,10 +620,50 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 261130467}
+    - target: {fileID: 783119473957374850, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 239.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697640417805841065, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080993587023491555, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080993587023491555, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267995133163076861, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267995133163076861, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a68a3f09944ea30488c6213a20616c8f, type: 3}
+    - target: {fileID: 4166692881539318502, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166692881539318502, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6447599569503156494, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1360766382}
+    - target: {fileID: 9018453114306562237, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018453114306562237, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 92793ec9052cbde4c84e2b9336302908, type: 3}
     - target: {fileID: 9022405169404889422, guid: 079d188078aa54c44a551dd6a6db54c3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
