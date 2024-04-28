@@ -11,7 +11,9 @@ public class SlideManager : MonoBehaviour
 {
     public List<Sprite> sprites = new List<Sprite>();
     public List<GameObject> texts = new List<GameObject>();
-    public List<Sound> voices = new List<Sound>();
+
+    public AudioClip slide1, slide2;
+    public AudioSource source;
     public Image image;
     private int curentSlide = 0;
     private LevelChanger levelChanger;
@@ -19,13 +21,17 @@ public class SlideManager : MonoBehaviour
     {
         levelChanger = FindObjectOfType<LevelChanger>();
         ShowNextSlide();
-        
+        source.clip = slide1;
+        source.Play();
     }
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
             ShowNextSlide();
+            source.Stop();
+            source.clip = slide2;
+            source.Play();
         }
     }
 
