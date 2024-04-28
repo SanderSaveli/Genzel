@@ -450,6 +450,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f4fa9dd1efecdf54d89d25db75647f46, type: 3}
   - name: TileMove
     clip: {fileID: 8300000, guid: ee3769b6c6ce84649913cf02ab8e6964, type: 3}
+  - name: Move
+    clip: {fileID: 8300000, guid: f51c92fae12d9774b8a2e181da41a610, type: 3}
   musicSource: {fileID: 251423192}
   sfxSource: {fileID: 378670029}
 --- !u!1 &488764178

@@ -45,10 +45,12 @@ public class GameManager : MonoBehaviour
         lastResult = pathFinder.TryCreatePath(gameField.cellField, StartCell, out List<IReferedCell> cells);
 
         roadMover.MoveToRoad(gameField.roadLayer, cells, roadEnd);
+        AudioManager.Instance.PlaySFX("Move");
     }
 
     private void RoadEnd(bool isPathComplete)
     {
+        AudioManager.Instance.MuteSFX();
         if (lastResult)
         {
             AudioManager.Instance.PlaySFX("Win");

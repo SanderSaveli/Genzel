@@ -28,6 +28,10 @@ public class AudioManager : MonoBehaviour
         PlayMusic("Theme");
     }
 
+    public void MuteSFX()
+    {
+        sfxSource.Stop();
+    }
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(musicSounds, x => x.name == name);
