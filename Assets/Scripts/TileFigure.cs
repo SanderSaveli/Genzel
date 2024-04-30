@@ -1,5 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine;
+using System.Collections;
+using UnityEditor;
+
+using System.IO;
 
 public class TileFigure : MonoBehaviour
 {
@@ -47,3 +52,5 @@ public class TileFigure : MonoBehaviour
         transform.position = pos;
     }
 }
+
+
