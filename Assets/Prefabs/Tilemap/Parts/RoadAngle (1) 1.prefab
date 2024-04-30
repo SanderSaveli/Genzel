@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4951063520702581026}
   - component: {fileID: 5555104900816766731}
   - component: {fileID: 8564710703397353121}
+  - component: {fileID: -4318189033318633356}
   m_Layer: 0
   m_Name: RoadAngle (1) 1
   m_TagString: Untagged
@@ -88,6 +89,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4318189033318633356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933511922174194220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8aca5dc68173974a9a8acb917b0abe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconData:
+    customIcon: {fileID: 2800000, guid: 4c41a6884f32d214db76cc6ed00f60f4, type: 3}
 --- !u!1001 &4568268587711639966
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3,17 +3,17 @@ using UnityEngine;
 public class TileParticle : MonoBehaviour
 {
     Camera _camera;
-    public Transform center;
-    public TileFigure figure;
+    public Transform center { get; private set; }
+    public TileFigure figure { get; private set; }
     public Vector2Int fieldCoordinate => lastCellView.coordinates;
     public Vector2Int coordinate => _coordinate;
-    [SerializeField] private Vector2Int _coordinate;
+    private Vector2Int _coordinate;
     [SerializeField] private bool _isRoad;
     public bool isRoad => _isRoad;
     public Road road { get; private set; }
     private Vector3 prevPos;
 
-    public CellView lastCellView;
+    public CellView lastCellView { get; set; }
     private IDropHandler lastSelectedView;
     bool isMovable;
 
@@ -23,6 +23,7 @@ public class TileParticle : MonoBehaviour
         _coordinate.y = (int)transform.localPosition.z;
         figure = GetComponentInParent<TileFigure>();
         center = GetComponent<Transform>();
+        figure = GetComponentInParent<TileFigure>();
         if (isRoad)
         {
             road = GetComponent<Road>();

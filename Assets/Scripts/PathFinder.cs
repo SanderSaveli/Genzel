@@ -9,13 +9,13 @@ public class PathFinder : MonoBehaviour
         path = new List<IReferedCell>();
         Vector2Int curCoor = StartRoad.gameObject.GetComponent<TileParticle>().fieldCoordinate;
         path.Add(field.GetCell(curCoor));
-        Debug.Log(curCoor.ToString());
         Road Curentroad = StartRoad;
-        Dir curentDir = Dir.right;
+        Dir curentDir = StartRoad.In1;
         while (!Curentroad.endRoad)
         {
             if (field.TryGetCell(curCoor + GetVectorByDir(curentDir), out IReferedCell cell))
             {
+                Debug.Log(cell.ToString());
                 if (cell.tile == null)
                 {
                     return false;
@@ -66,19 +66,14 @@ public class PathFinder : MonoBehaviour
         {
             case (Dir.left):
                 return Dir.right;
-                break;
             case (Dir.right):
                 return Dir.left;
-                break;
             case (Dir.top):
                 return Dir.bottom;
-                break;
             case (Dir.bottom):
                 return Dir.top;
-                break;
             default:
                 return Dir.top;
-                break;
 
         }
     }

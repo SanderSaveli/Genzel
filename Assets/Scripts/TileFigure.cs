@@ -1,10 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
-using System.Collections;
-using UnityEditor;
-
-using System.IO;
 
 public class TileFigure : MonoBehaviour
 {
@@ -15,12 +10,11 @@ public class TileFigure : MonoBehaviour
         tileParticles = new List<TileParticle>();
         int childCount = transform.childCount;
 
-        for(int i = 0; i < childCount; i++)
+        for (int i = 0; i < childCount; i++)
         {
-            if(transform.GetChild(i).TryGetComponent(out TileParticle particle))
+            if (transform.GetChild(i).TryGetComponent(out TileParticle particle))
             {
                 tileParticles.Add(particle);
-                particle.figure = this;
             }
         }
     }

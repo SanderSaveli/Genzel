@@ -1,15 +1,16 @@
 using CellField2D;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-[RequireComponent(typeof(GameField), typeof(RoadMover), typeof(PathFinder))]
+[RequireComponent(typeof(GameField), typeof(PathFinder))]
 public class GameManager : MonoBehaviour
 {
     public static bool canMoveTiles = true;
     private GameMenu menu;
     private GameField gameField;
-    private RoadMover roadMover;
+    private WalkingOnRoad roadMover;
     private PathFinder pathFinder;
     public Road StartCell;
     private Action<bool> roadEnd;
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameField = GetComponent<GameField>();
-        roadMover = GetComponent<RoadMover>();
+        roadMover = FindObjectOfType<WalkingOnRoad>();
         pathFinder = GetComponent<PathFinder>();
         menu = FindObjectOfType<GameMenu>();
         isSets = false;
@@ -30,7 +31,8 @@ public class GameManager : MonoBehaviour
     {
         if (!isSets)
         {
-            roadMover.SetObjectPosition(StartCell.transform.position);
+            Vector3Int startCellPos = (Vector3Int)StartCell.gameObject.GetComponent<TileParticle>().fieldCoordinate;
+            roadMover.SetObjectPosition(gameField.roadLayer.CellToWorld(startCellPos));
             isSets = true;
         }
     }
@@ -43,8 +45,7 @@ public class GameManager : MonoBehaviour
     {
         canMoveTiles = false;
         lastResult = pathFinder.TryCreatePath(gameField.cellField, StartCell, out List<IReferedCell> cells);
-
-        roadMover.MoveToRoad(gameField.roadLayer, cells, roadEnd);
+        roadMover.StartMove(GetCellCoordinates(cells), roadEnd);
         AudioManager.Instance.PlaySFX("Move");
     }
 
@@ -61,5 +62,18 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.PlaySFX("Lose");
             menu.ShowLose();
         }
+    }
+
+    private List<Vector3> GetCellCoordinates(List<IReferedCell> cells)
+    {
+        List<Vector3> cellPositions = new();
+        foreach (IReferedCell cell in cells)
+        {
+            Vector3Int coor = new Vector3Int(cell.x, cell.y, 0);
+            Vector3 targetPos = gameField.roadLayer.CellToWorld(coor);
+            targetPos.y += 1;
+            cellPositions.Add(targetPos);
+        }
+        return cellPositions;
     }
 }

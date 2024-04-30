@@ -74,7 +74,10 @@ public class GameField : MonoBehaviour
                 if(GetPatricleCell(cell, centerPart, particle, out IReferedCell OwnedCell))
                 {
                     Vector2Int cellPos = OwnedCell.coordinates;
-                    particle.transform.position = roadLayer.CellToWorld(new Vector3Int(cellPos.x, cellPos.y, 0));
+                    Vector3 pos = roadLayer.CellToWorld(new Vector3Int(cellPos.x, cellPos.y, 0));
+                    pos.x += 0.5f;
+                    pos.z += 0.5f;
+                    particle.transform.position = pos;
                     OwnedCell.changeOwner(1, particle);
                     particle.lastCellView = OwnedCell.cellView;
                     OwnedCell.tile = particle;

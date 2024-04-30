@@ -1,30 +1,52 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
+    public static AudioManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                GameObject gm = new GameObject("AudioManager");
+                return gm.AddComponent<AudioManager>();
+            }
+            return instance;
+        }
+        set
+        {
+            if (instance == null)
+            {
+                instance = value;
+                DontDestroyOnLoad(value.gameObject);
+            }
+            else
+            {
+                Destroy(value.gameObject);
+            }
+        }
+    }
+    private static AudioManager instance;
 
-    public Sound[] musicSounds, sfxSounds;
+    public List<Sound> musicSounds = new(), sfxSounds = new();
     public AudioSource musicSource, sfxSource;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
     private void Start()
     {
+        if(musicSource == null)
+        {
+            musicSource = gameObject.AddComponent<AudioSource>();
+        }
+        if (sfxSource == null)
+        {
+            sfxSource = gameObject.AddComponent<AudioSource>();
+        }
         PlayMusic("Theme");
     }
 
@@ -34,7 +56,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayMusic(string name)
     {
-        Sound s = Array.Find(musicSounds, x => x.name == name);
+        Sound s = musicSounds.Find(x => x.name == name);
 
         if (s == null)
         {
@@ -49,7 +71,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(string name)
     {
-        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        Sound s = sfxSounds.Find(x => x.name == name);
 
         if (s == null)
         {

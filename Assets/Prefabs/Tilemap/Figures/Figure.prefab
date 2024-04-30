@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 302128214470144084}
   - component: {fileID: 5164387265254720256}
-  - component: {fileID: 789222180632339311}
+  - component: {fileID: -1746372574563313238}
   m_Layer: 0
   m_Name: Figure
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc5e8dd8e914594c8438b9888c78060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &789222180632339311
+--- !u!114 &-1746372574563313238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,10 +57,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3903143043233579724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13023c3ae3c04394a8a096b1160f5732, type: 3}
+  m_Script: {fileID: 11500000, guid: d8aca5dc68173974a9a8acb917b0abe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customIcon: {fileID: 2800000, guid: 75438c27ef298fe41a70ce4c24a0340c, type: 3}
+  iconData:
+    customIcon: {fileID: 2800000, guid: 9fe747f4f2091b94196f60e77cca863d, type: 3}
 --- !u!1001 &817271973684996116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113,7 +114,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: HorizontalRoad
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 582452147462057740, guid: 68d7750b58ff2cb40b81c980fc858fee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -237,7 +239,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: HorizontalRoad (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 582452147462057740, guid: 68d7750b58ff2cb40b81c980fc858fee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

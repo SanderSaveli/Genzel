@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class PrefabIcon : MonoBehaviour
+[System.Serializable]
+public class PrefabIconData
 {
     public Texture2D customIcon;
 }
