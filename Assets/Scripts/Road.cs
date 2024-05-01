@@ -9,10 +9,17 @@ public enum Dir
     bottom
 }
 
+public enum RoadType
+{
+    Default,
+    StartRoad,
+    EndRoad,
+}
+
 public class Road : MonoBehaviour
 {
 
-    public bool endRoad = false;
+    public RoadType roadType = RoadType.Default;
     public Dir In1;
     public Dir In2;
 

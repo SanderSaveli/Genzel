@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconData:
-    customIcon: {fileID: 2800000, guid: b1e3ea3a5abb97244aa44f87f8d33acf, type: 3}
+    customIcon: {fileID: 2800000, guid: 4c41a6884f32d214db76cc6ed00f60f4, type: 3}
 --- !u!1001 &6845384249516852410
 PrefabInstance:
   m_ObjectHideFlags: 0

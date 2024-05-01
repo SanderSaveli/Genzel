@@ -11,7 +11,7 @@ public class PathFinder : MonoBehaviour
         path.Add(field.GetCell(curCoor));
         Road Curentroad = StartRoad;
         Dir curentDir = StartRoad.In1;
-        while (!Curentroad.endRoad)
+        while (Curentroad.roadType != RoadType.EndRoad)
         {
             if (field.TryGetCell(curCoor + GetVectorByDir(curentDir), out IReferedCell cell))
             {
@@ -42,7 +42,7 @@ public class PathFinder : MonoBehaviour
                         return false;
                     }
 
-                    if (cell.tile.road.endRoad)
+                    if (cell.tile.road.roadType == RoadType.EndRoad)
                     {
                         return true;
                     }

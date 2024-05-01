@@ -101,6 +101,10 @@ PrefabInstance:
       propertyPath: endRoad
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4347507676441609165, guid: 75d689a3b68f7024c9275a71355c3079, type: 3}
+      propertyPath: roadType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4647082628783716575, guid: 75d689a3b68f7024c9275a71355c3079, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -135,11 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c872ed154a7f2f43a882aee019ac28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {fileID: 0}
-  figure: {fileID: 0}
-  _coordinate: {x: 0, y: 0}
   _isRoad: 1
-  lastCellView: {fileID: 0}
 --- !u!4 &6838635717317476418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1471290720931896949, guid: 75d689a3b68f7024c9275a71355c3079, type: 3}

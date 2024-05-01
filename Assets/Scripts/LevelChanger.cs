@@ -9,6 +9,11 @@ public class LevelChanger : MonoBehaviour
 
     public void FadeToLevel(int levelIndex)
     {
+        if(levelIndex >= SceneManager.sceneCount)
+        {
+            levelIndex = 0;
+            PlayerPrefs.SetInt(levelKey, 2);
+        }
         levelToLoad = levelIndex;
         animator.SetTrigger("Fade_Out");
     }

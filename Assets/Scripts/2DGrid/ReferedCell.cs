@@ -21,7 +21,6 @@ namespace CellField2D
             }
             base.changeOwner(ownerID);
             cellView.ChangeOvner(ownerID);
-            Debug.Log(tile + " " + coordinates);
 
         }
 

@@ -46,11 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8345be0160dfb3b4aa3f0f5e8c7f037f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {fileID: 0}
-  figure: {fileID: 0}
-  _coordinate: {x: 0, y: 0}
   _isRoad: 0
-  lastCellView: {fileID: 0}
 --- !u!65 &2589122256894729193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,12 +129,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6795462705980167066, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+    - target: {fileID: -7511558181221131132, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: -8094762062661945320, guid: b406f604d8819244dbc34563b3897766, type: 3}
+    - target: {fileID: -7511558181221131132, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 311f4bf7b4a2c22448c7795746c683cc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 8212226473263337188, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+    - target: {fileID: -7511558181221131132, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 7fd193eeb5044d74eb0d8532009433f6, type: 3}
+    - target: {fileID: -7511558181221131132, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 7fd193eeb5044d74eb0d8532009433f6, type: 3}
     - target: {fileID: 919132149155446097, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
       propertyPath: m_Name
       value: DefaultTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae946f36e04dfcc479722794f442ade0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

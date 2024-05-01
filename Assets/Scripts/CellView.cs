@@ -1,12 +1,20 @@
 using UnityEngine;
-using Zenject;
 
 public class CellView : MonoBehaviour, IDropHandler
 {
     public GameField gameField;
+    public Color defaultColor = Color.gray;
+    public Color highlightColor = Color.yellow;
+
+    private MeshRenderer _meshRenderer;
 
     public Vector2Int coordinates { get; private set; }
-    
+    private void Start()
+    {
+        _meshRenderer = gameObject.GetComponent<MeshRenderer>();
+        DeSelect();
+    }
+
     public void SetCoordinates(Vector2Int coordinates)
     {
         this.coordinates = coordinates;
@@ -16,27 +24,21 @@ public class CellView : MonoBehaviour, IDropHandler
         if (gameField.TryPlaceFigure(figure, this))
         {
             gameField.PlaceFigure(figure, this);
-            figure.PlaceOnCell(this);
-            return true;    
+            return true;
         }
         return false;
     }
 
     public void figureLeave(TileParticle figure)
     {
-        gameField.LeaveCell(figure,this);
+        gameField.LeaveCell(figure, this);
     }
 
     public void ChangeOvner(int ownerID)
     {
-        Debug.Log("Change" + ownerID+ " " + coordinates);
-        if(ownerID == 0)
+        if (ownerID == 0)
         {
             DeSelect();
-        }
-        if (ownerID == 1)
-        {
-            gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
         }
     }
 
@@ -52,12 +54,11 @@ public class CellView : MonoBehaviour, IDropHandler
 
     public void Select()
     {
-        gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.yellow;
+        _meshRenderer.materials[0].color = highlightColor;
     }
 
     public void DeSelect()
     {
-        ColorUtility.TryParseHtmlString("#594E4A", out Color myColor);
-        gameObject.GetComponent<MeshRenderer>().materials[0].color = myColor;
+        _meshRenderer.materials[0].color = defaultColor;
     }
 }

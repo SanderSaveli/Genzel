@@ -25,6 +25,8 @@ public class WalkingOnRoad : MonoBehaviour
 
     public void SetObjectPosition(Vector3 pos)
     {
+        pos.x += 0.5f;
+        pos.z += 0.5f;
         pos.y += 1;
         transform.transform.position = pos;
     }

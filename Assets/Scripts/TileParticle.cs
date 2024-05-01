@@ -5,17 +5,18 @@ public class TileParticle : MonoBehaviour
     Camera _camera;
     public Transform center { get; private set; }
     public TileFigure figure { get; private set; }
+    public Road road { get; private set; }
+    public CellView lastCellView { get; set; }
     public Vector2Int fieldCoordinate => lastCellView.coordinates;
     public Vector2Int coordinate => _coordinate;
-    private Vector2Int _coordinate;
-    [SerializeField] private bool _isRoad;
     public bool isRoad => _isRoad;
-    public Road road { get; private set; }
+
+    [SerializeField] private bool _isRoad;
+    private Vector2Int _coordinate;
     private Vector3 prevPos;
 
-    public CellView lastCellView { get; set; }
     private IDropHandler lastSelectedView;
-    bool isMovable;
+    private bool isMovable;
 
     private void Awake()
     {
@@ -148,10 +149,5 @@ public class TileParticle : MonoBehaviour
             }
         }
         return false;
-    }
-
-    public void PlaceOnCell(CellView view)
-    {
-        //_coordinate = view.coordinates;
     }
 }

@@ -1,7 +1,6 @@
 using CellField2D;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 [RequireComponent(typeof(GameField), typeof(PathFinder))]
@@ -12,7 +11,6 @@ public class GameManager : MonoBehaviour
     private GameField gameField;
     private WalkingOnRoad roadMover;
     private PathFinder pathFinder;
-    public Road StartCell;
     private Action<bool> roadEnd;
     private bool lastResult = false;
     private bool isSets;
@@ -25,16 +23,10 @@ public class GameManager : MonoBehaviour
         menu = FindObjectOfType<GameMenu>();
         isSets = false;
         canMoveTiles = true;
-    }
 
-    private void Update()
-    {
-        if (!isSets)
-        {
-            Vector3Int startCellPos = (Vector3Int)StartCell.gameObject.GetComponent<TileParticle>().fieldCoordinate;
-            roadMover.SetObjectPosition(gameField.roadLayer.CellToWorld(startCellPos));
-            isSets = true;
-        }
+        Vector3Int startCellPos = (Vector3Int)gameField.startCell.gameObject.GetComponent<TileParticle>().fieldCoordinate;
+        roadMover.SetObjectPosition(gameField.roadLayer.CellToWorld(startCellPos));
+        isSets = true;
     }
 
     private void OnEnable()
@@ -44,7 +36,7 @@ public class GameManager : MonoBehaviour
     public void StratMove()
     {
         canMoveTiles = false;
-        lastResult = pathFinder.TryCreatePath(gameField.cellField, StartCell, out List<IReferedCell> cells);
+        lastResult = pathFinder.TryCreatePath(gameField.cellField, gameField.startCell, out List<IReferedCell> cells);
         roadMover.StartMove(GetCellCoordinates(cells), roadEnd);
         AudioManager.Instance.PlaySFX("Move");
     }
@@ -71,6 +63,8 @@ public class GameManager : MonoBehaviour
         {
             Vector3Int coor = new Vector3Int(cell.x, cell.y, 0);
             Vector3 targetPos = gameField.roadLayer.CellToWorld(coor);
+            targetPos.x += 0.5f;
+            targetPos.z += 0.5f;
             targetPos.y += 1;
             cellPositions.Add(targetPos);
         }

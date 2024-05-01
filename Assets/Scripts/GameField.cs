@@ -7,14 +7,14 @@ public class GameField : MonoBehaviour
 {
     [SerializeField] private Tilemap fieldLayer;
     [SerializeField] public Tilemap roadLayer;
+    public Road startCell { get; private set; }
 
     public RectangleField<IReferedCell> cellField;
 
-    private void Start()
+    private void OnEnable()
     {
         cellField = new RectangleField<IReferedCell>();
-        InstantField();
-        
+        InstantField();     
     }
 
     public bool TryPlaceFigure(TileParticle centerPart, CellView cell)
@@ -121,6 +121,7 @@ public class GameField : MonoBehaviour
                 Vector2Int coordinate = (Vector2Int)fieldLayer.WorldToCell(figure.tileParticles[0].transform.position);
                 cellField.TryGetCell(coordinate,out IReferedCell ownedCell);
                 ownedCell.cellView.DropFigure(figure.tileParticles[0]);
+                CheckForStartCell(figure);
             }
         }
     }
@@ -136,5 +137,20 @@ public class GameField : MonoBehaviour
         return false;
     }
 
+    private void CheckForStartCell(TileFigure figure)
+    {
+        Transform figureTrransform = figure.transform;
+        for(int i =0; i < figureTrransform.childCount; i++)
+        {
+            if (figureTrransform.GetChild(i).TryGetComponent(out Road road))
+            {
+                if(road.roadType == RoadType.StartRoad)
+                {
+                    Debug.Log(road);
+                    startCell = road;
+                }
+            }
+        }
+    }
 
 }

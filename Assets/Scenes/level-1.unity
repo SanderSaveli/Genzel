@@ -15679,11 +15679,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461179613301537322, guid: 360b0d57268f9fd429992ba9803055f7, type: 3}
       propertyPath: speed
-      value: 0.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7461179613301537322, guid: 360b0d57268f9fd429992ba9803055f7, type: 3}
       propertyPath: minDistanceToNextRotate
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7586478230255917800, guid: 360b0d57268f9fd429992ba9803055f7, type: 3}
       propertyPath: m_LocalRotation.w

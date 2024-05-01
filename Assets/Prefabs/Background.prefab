@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameField: {fileID: 0}
+  defaultColor: {r: 0.5686275, g: 0.42745098, b: 0.6, a: 1}
+  highlightColor: {r: 0.85660374, g: 0.7552639, b: 0.18586673, a: 1}
